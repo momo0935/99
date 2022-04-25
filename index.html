@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+<script>
+var IsInitReader = 0;
+function test(){
+var num = document.getElementById("num").value;
+if(isNaN(num)){
+alert("請重新輸入一個整數");
+}else if(num<1||num>9){
+alert("請重新輸入一個1至9之間的整數");
+}else{
+let table = document.getElementById("table");
+let result = "";
+for(var i=1;i<=9;i++){
+result +=num+"*"+(i)+"="+(num*i);
+if(i!=9){
+result +="<br>";
+}
+}
+table.innerHTML = result;
+}
+}
+</script>
+輸入一個整數：<input id="num" width=100></input><input type="button" value="生成九九乘法表" onclick="test()"></input><br>
+<div id="table"></div>
+</body>
+</html>
